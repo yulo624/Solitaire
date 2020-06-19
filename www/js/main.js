@@ -329,8 +329,10 @@ function checkLose(now_cards){
 	var hasK = false;
 	
 	now_cards.forEach(function(card_1){
-		if(card_1.max == "K"){
-			hasK = true;
+		if(card_1.isShow != null && card_1.isShow == "yes" && card_1.row != 0 && card_1.row != 6 && card_1.order != 0 && card_1.order != 6){
+			if(card_1.max == "K"){
+				hasK = true;
+			}
 		}
 	});
 	now_cards.forEach(function(card_1){
