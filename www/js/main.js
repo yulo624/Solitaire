@@ -326,7 +326,13 @@ function checkFinish(obj){
 
 function checkLose(now_cards){
 	let isLose = true;
+	var hasK = false;
 	
+	now_cards.forEach(function(card_1){
+		if(card_1.max == "K"){
+			hasK = true;
+		}
+	});
 	now_cards.forEach(function(card_1){
 		
 		if(card_1.isShow != null && card_1.isShow == "yes" && card_1.row != 0 && card_1.row != 6 && card_1.order != 0 && card_1.order != 6){
@@ -334,7 +340,7 @@ function checkLose(now_cards){
 				let card_2 = now_cards[i];
 				if(card_2.isShow != null && card_2.isShow == "yes" && card_2.row != 0 && card_2.row != 6 && card_2.order != 0 && card_2.order != 6){
 					
-					if(card_1.max == "K" || card_2.max == "K"){
+					if(hasK){
 						
 						if( (card_1.row + 1) == card_2.row || (card_1.row - 1) == card_2.row || (card_1.order + 1) == card_2.order || (card_1.order - 1) == card_2.order){
 							if(getLevel(card_1.max) == getLevel(card_2.min) - 1 || getLevel(card_1.min) == getLevel(card_2.max) + 1){
@@ -478,20 +484,18 @@ var vm = new Vue({
 			var viewRankData = [];
 			var hasAddRank = false;
 			if(!isEndGame){
-				if(rankData.length > 0){
-					for(var i = 0 ; i < 10 ; i++){
-						if(i < rankData.length){
-							viewRankData.push(rankData[i]);
-						}else{
-							viewRankData.push({
-								level:"",
-								score:"",
-								finishRow:""
-							});
-						}
+				for(var i = 0 ; i < 10 ; i++){
+					if(rankData.length > 0 && i < rankData.length){
+						viewRankData.push(rankData[i]);
+					}else{
+						viewRankData.push({
+							level:"",
+							score:"",
+							finishRow:""
+						});
 					}
-					this.rankData = viewRankData;
 				}
+				this.rankData = viewRankData;
 				return;
 			}
 			if(rankData.length > 0){
