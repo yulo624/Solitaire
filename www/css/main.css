@@ -7,7 +7,9 @@
 	#topPanel{
 		width:100%;
 		min-height:8vh;
-		background-color: #00000085;
+		/* background-color: #00000085;*/
+		background-color: #000;
+		opacity: 0.6; 
 		border-radius: 7px;
 		color: #fff;
 		line-height: 8vh;
@@ -217,7 +219,11 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		/*
 		background-color: #00000094;
+		*/
+		background-color: #000;
+		opacity: 0.6; 
 		z-index: 95;
 	}
 	
@@ -244,7 +250,11 @@
 	
 	#end-view{
 		position: absolute;
+		/*
 		background-color: #545454d4;
+		*/
+		background-color: #848484;
+		opacity: 0.83;
 		width: 70vw;
 		height: 25vh;
 		z-index: 99;
@@ -451,7 +461,9 @@
 	#topPanel{
 		width:100%;
 		min-height:8vw;
-		background-color: #00000085;
+		/*background-color: #00000085;*/
+		background-color: #000;
+		opacity: 0.6; 
 		border-radius: 7px;
 		color: #fff;
 		line-height: 8vw;
@@ -657,7 +669,9 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-color: #00000094;
+		/*background-color: #00000094;*/
+		background-color: #000;
+		opacity: 0.6; 
 		z-index: 95;
 	}
 	
@@ -683,7 +697,9 @@
 
 	#end-view{
 		position: absolute;
-		background-color: #545454d4;
+		/* background-color: #545454d4; */
+		background-color: #848484;
+		opacity: 0.83;
 		width: 70vh;
 		height: 25vw;
 		z-index: 99;
@@ -891,7 +907,11 @@ body{
 
 
 #timeBarContainer{
+	/*
 	background-color: #7b717185;
+	*/	
+	background-color: #7b7171;
+	opacity: 0.52;
 	width: 98%;
     border-radius: 7px;
     margin: auto;
