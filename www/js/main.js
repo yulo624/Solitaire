@@ -387,7 +387,7 @@ var vm = new Vue({
 		showHome:true,
 		hasRecord:hasRecord,
 		mode:'leisure',
-		time:5,  //300s  
+		time:300,  //300s  
 		timer:null,
 		timeBar:100,
 		timeBonus:20,
