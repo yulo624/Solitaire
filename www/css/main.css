@@ -911,13 +911,12 @@ body{
 	background-color: #7b717185;
 	*/	
 	background-color: #7b7171;
-	opacity: 0.52;
 	width: 98%;
     border-radius: 7px;
     margin: auto;
 }
 #timeBar{
-	background-color:#61de46;
+	background-color:#2dff00;
 	height:8px;
 	border-radius: 7px;
 }
