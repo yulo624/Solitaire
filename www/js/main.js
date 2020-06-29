@@ -482,6 +482,7 @@ var vm = new Vue({
 			var tmpRankData = [];
 			var viewRankData = [];
 			var hasAddRank = false;
+			var hasAddRank_Index = 0;
 			if(!isEndGame){
 				for(var i = 0 ; i < 10 ; i++){
 					if(rankData.length > 0 && i < rankData.length){
@@ -500,8 +501,8 @@ var vm = new Vue({
 			if(rankData.length > 0){
 				for(var i = 0 ; i < rankData.length ; i++){
 					if(hasAddRank){
-						tmpRankData.push(rankData[i]);
-						viewRankData.push(rankData[i]);
+						tmpRankData.push(rankData[i-1]);
+						viewRankData.push(rankData[i-1]);
 					}else{
 						if( (rankData[i].score > this.score) || ( rankData[i].score == this.score && rankData[i].level <= this.level ) ){
 							tmpRankData.push(rankData[i]);
@@ -518,6 +519,7 @@ var vm = new Vue({
 								finishRow:this.finishRow
 							});
 							hasAddRank = true;
+							hasAddRank_Index = i;
 							this.thisTimeRankIndex = i;
 						}
 					}
@@ -536,6 +538,14 @@ var vm = new Vue({
 							finishRow:this.finishRow
 						});
 						this.thisTimeRankIndex = tmpRankData.length - 1;
+					}else if(hasAddRank && i == rankData.length-1 && rankData.length < 9 ){
+						for(var k = hasAddRank_Index ; k < rankData.length ; k++){
+							tmpRankData.push(rankData[k]);
+							viewRankData.push(rankData[k]);
+							if(tmpRankData.length >= 10){
+								break;
+							}
+						}
 					}
 				}
 			}else{
